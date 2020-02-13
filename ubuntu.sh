@@ -21,11 +21,10 @@ sudo groupadd docker
 sudo gpasswd -a $USER docker
 newgrp docker
 
+cd $HOME/.ssh && vi id_rsa && chmod 400 id_rsa
+cd $HOME
+git clone git@github.com:cesarmira/dotfiles.git
 
-# rcup up
 echo "rcup up"
-rcup -d ~/dotfiles/
-
-# Installing o my zsh
-echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp ~/dotfiles/rcrc ~/.rcrc
+rcup -d ~/dotfiles
